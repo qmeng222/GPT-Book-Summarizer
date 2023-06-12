@@ -1,5 +1,6 @@
 import requests
 import re  # import the regular expression module in Python
+import tiktoken
 
 # Great Gatsby:
 # response = requests.get("https://www.gutenberg.org/cache/epub/64317/pg64317.txt")
@@ -41,3 +42,13 @@ print(split) # ['meta data\n', '\ntext1\n', '\ntext2\n', '\nendding']
 split = re.split(r"\*\*\* .+ \*\*\*", book_complete_text)
 print("Divided into parts of length:", [len(part) for part in split])
 book = split[1]
+
+model_name = "gpt-3.5-turbo"
+# obtain the encoding object (enc) for a specific language model:
+enc = tiktoken.encoding_for_model(model_name)
+num_tokens = len(enc.encode(book))
+print(f"Text contains {num_tokens} tokens")
+cost_per_token = 0.002 / 1000
+print(
+    f"The approximate price of this summary will be: ${num_tokens * cost_per_token:.2f}"
+)
