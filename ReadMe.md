@@ -2,10 +2,17 @@
 
 ## About:
 
-- Description:
-- Tech stack:
+- Description: An automated book summarizer using gpt-3.5-turbo model and recursive meta summarization techniques.
+- Highlights:
+  1. Implemented a token limit management strategy to ensure efficient summarization within model constraints.
+  2. Utilized caching to store and retrieve summaries, enhancing performance and handling potential request failures.
+  3. Incorporated rate limit control logic to prevent excessive requests.
+- Tech stack: GPT, Python
 - Overview:
-  ![project overivew](/abc.png)
+  - Recursive meta summarization:
+    ![recursive meta summarization](/images/tree-structure.png)
+  - The Great Gatsby as the test case:
+    ![test case](/images/GPT-Book-Summarizer_overview.png)
 
 ## Setup:
 
@@ -29,3 +36,5 @@
 ## Resources:
 
 1. [Project Gutenberg is a library of over 70,000 free eBooks.](https://www.gutenberg.org/)
+2. [Max tokens for each model](https://platform.openai.com/docs/models/continuous-model-upgrades)
+3. [OpenAI rate limit](https://platform.openai.com/docs/guides/rate-limits/overview)
